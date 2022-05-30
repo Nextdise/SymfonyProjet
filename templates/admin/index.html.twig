@@ -1,0 +1,139 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<div class = "topBarre">
+    <button class = "btnbtn-default" type ="button"onclick ="window.location.href='http://127.0.0.1:8000/index'">ACCEUIL</button>
+    <button class = "btnbtn-default" type ="button" onclick ="window.location.href='http://127.0.0.1:8000/recettes'">RECETTES</button>
+    <button class = "btnbtn-default" type ="button" onclick ="window.location.href='http://127.0.0.1:8000/propos'">A PROPOS</button>
+    <button class = "btnbtn-default" type ="button" onclick ="window.location.href='http://127.0.0.1:8000/contact'">CONTACT</button>
+    <button class = "btnbtn-default" type ="button" onclick ="window.location.href='http://127.0.0.1:8000/login'">DECONNEXION</button>
+    <button class = "btnbtn-default" type ="button" onclick ="window.location.href='http://127.0.0.1:8000/login'">ADMIN</button>
+
+
+
+    <style>
+        .topBarre{
+            background-color: #F8F9F7;
+            height:50px;
+            display:flex;
+            justify-content: space-around;
+
+
+
+        }
+        .btnbtn-default{
+            background: transparent;
+            border: none !important;
+            color:grey;
+            
+
+        }
+
+    </style>
+</div>
+
+<div class = "logoBarre">
+    <style>
+        .logoBarre{
+           text-align: center;
+           margin-top: 30px;
+        }
+        h1{
+            color: grey;
+        }
+    </style>
+
+    <img src= "https://www.le-monde-du-stickers.fr/11524/sticker-cuisine-olive.jpg" alt="Logo" width="10%" >
+    <h1>Aventure Gustative</h1>
+
+
+</div>
+<div class = "ligneDeMerde">
+    <p> </p>
+    <style>
+        .ligneDeMerde{
+            margin-top:50px;
+            margin-right:2%;
+            margin-left:2%;
+            width:96%;
+            height:1px;
+            background-color:#E9E1E9;
+
+        }
+    </style>
+
+</div>
+<div class = "mid"> 
+
+    <h1>Administration</h1>
+
+    <style>
+        h1{
+            text-align:center;
+        }
+        .mid{
+            display:flex;
+            justify-content:center;
+            flex-direction:column;
+            
+            margin-right: 30%;
+            margin-left:30%;
+        }
+        table{
+            border-collapse: collapse;
+            margin-top:30px;
+        }
+
+        td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .divDesBouton{
+            display:flex;
+        }
+        .btnModif{
+            background-color:#B2996B;
+            color:#FFFFFF;
+            border: none !important;
+        }
+        .btnSupp{
+            background-color:red;
+            color:#FFFFFF;
+            border: none !important;
+            
+        }
+        .divDesTitres{
+            display:flex;
+        }
+    </style>
+    <table>
+        <tr>
+            <div class = "divDesTitres">
+                <td>id</td>
+                <td>Titre</td>
+                <td>Catégorie</td>
+                <td>Action</td>
+            </div> 
+        </tr>
+        {% for post in posts %}          
+            
+            <tr>
+                <td>{{post.id}}</td>
+                <td>{{post.name}}</td>
+                <td>{{post.type}}</td>
+                <td>
+                    <div class = "divDesBouton">
+                        <button type="submit" class="btnModif">Modifier</button>
+                        <button type="submit" class="btnSupp">Supprimer</button>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    
+
+
+</div>
+{% endblock %}

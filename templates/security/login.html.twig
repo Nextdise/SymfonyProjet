@@ -1,0 +1,166 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+
+        <div class = "topBarre">
+        <button class = "btnbtn-default" type ="button"onclick ="window.location.href='http://127.0.0.1:8000/index'">ACCEUIL</button>
+        <button class = "btnbtn-default" type ="button" onclick ="window.location.href='http://127.0.0.1:8000/recettes'">RECETTES</button>
+        <button class = "btnbtn-default" type ="button"onclick ="window.location.href='http://127.0.0.1:8000/propos'">A PROPOS</button>
+        <button class = "btnbtn-default" type ="button" onclick ="window.location.href='http://127.0.0.1:8000/contact'">CONTACT</button>
+        <button class = "btnbtn-default" type ="button" onclick ="window.location.href='http://127.0.0.1:8000/login'">CONNEXION</button>
+
+
+        <style>
+            .topBarre{
+                background-color: #F8F9F7;
+                height:50px;
+                display:flex;
+                justify-content: space-around;
+
+
+
+            }
+            .btnbtn-default{
+                background: transparent;
+                border: none !important;
+                color:grey;
+                
+
+            }
+
+        </style>
+    </div>
+
+    <div class = "logoBarre">
+        <style>
+            .logoBarre{
+            text-align: center;
+            margin-top: 30px;
+            }
+            h1{
+                color: grey;
+            }
+        </style>
+
+        <img src= "https://www.le-monde-du-stickers.fr/11524/sticker-cuisine-olive.jpg" alt="Logo" width="10%" >
+        <h1>Aventure Gustative</h1>
+
+
+    </div>
+    <div class = "ligneDeMerde">
+        <p> </p>
+        <style>
+            .ligneDeMerde{
+                margin-top:50px;
+                margin-right:2%;
+                margin-left:2%;
+                width:96%;
+                height:1px;
+                background-color:#E9E1E9;
+
+            }
+        </style>
+    </div>
+    
+
+    {# PREFAIT #}
+
+    <div class = "Flex">
+        <style>
+
+            .Flex{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                margin-top:50px;
+
+            }
+            .form-control{
+                margin-right: 43%;
+                margin-left: 43%;
+                margin-top:10px;
+            }
+            .btnBtn-lgBtn-primary{
+                margin-right: 46%;
+                margin-left: 46%;
+                margin-top:10px;
+                border: 0px solid transparent;
+                background-color:#84947b;
+                color: white;
+            }
+            
+        
+        
+        </style>
+
+        <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
+        
+        <input type="email" value={{ "last_username"}} name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+        <input type="hidden" name="_csrf_token"
+            value="{{ csrf_token('authenticate') }}"
+        >
+
+        {#
+            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+            See https://symfony.com/doc/current/security/remember_me.html
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" name="_remember_me"> Remember me
+                </label>
+            </div>
+        #}
+
+        <button class="btnBtn-lgBtn-primary" type="submit">
+            Connexion
+        </button>
+    </div>
+    
+</form>
+<footer class = "end">
+        <style>
+            .end{
+                margin-top: 6%;
+                background-color: #F8F9F7;
+                margin-right:2%;
+                margin-left: 2%;
+                display:flex;
+                justify-content: space-around;
+            }
+            .Social{
+                margin-top: 2%;
+
+            }
+        </style>
+
+        <div class="2022">
+            <h4>@ 2022 par Avenue Gustative</h4>
+        </div>
+        <div class="Social">
+            <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-pinterest"></a>
+
+        </div> 
+
+
+    </footer>
+
+{% endblock %}

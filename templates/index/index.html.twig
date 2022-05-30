@@ -1,0 +1,202 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello IndexController!{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class = "topBarre">
+    <button class = "btnbtn-default" type ="button"onclick ="window.location.href='http://127.0.0.1:8000/index'">ACCEUIL</button>
+    <button class = "btnbtn-default" type ="button" onclick ="window.location.href='http://127.0.0.1:8000/recettes'">RECETTES</button>
+    <button class = "btnbtn-default" type ="button" onclick ="window.location.href='http://127.0.0.1:8000/propos'" >A PROPOS</button>
+    <button class = "btnbtn-default" type ="button" onclick ="window.location.href='http://127.0.0.1:8000/contact'">CONTACT</button>
+    <button class = "btnbtn-default" type ="button" onclick ="window.location.href='http://127.0.0.1:8000/login'">CONNEXION</button>
+
+
+    <style>
+        .topBarre{
+            background-color: #F8F9F7;
+            height:50px;
+            display:flex;
+            justify-content: space-around;
+
+
+
+        }
+        .btnbtn-default{
+            background: transparent;
+            border: none !important;
+            color:grey;
+            
+
+        }
+
+    </style>
+</div>
+
+<div class = "logoBarre">
+    <style>
+        .logoBarre{
+           text-align: center;
+           margin-top: 30px;
+        }
+        h1{
+            color: grey;
+        }
+    </style>
+
+    <img src= "https://www.le-monde-du-stickers.fr/11524/sticker-cuisine-olive.jpg" alt="Logo" width="10%" >
+    <h1>Aventure Gustative</h1>
+
+
+</div>
+<div class = "ligneDeMerde">
+    <p> </p>
+    <style>
+        .ligneDeMerde{
+            margin-top:50px;
+            margin-right:2%;
+            margin-left:2%;
+            width:96%;
+            height:1px;
+            background-color:#E9E1E9;
+
+        }
+    </style>
+
+</div>
+<div class = "mid">
+    <style>
+        .mid{
+            margin-left: 20%;
+            margin-right:20%;
+        }
+
+    </style>
+
+    <div class = "Bienvenue" >
+        <h2>Bienvenue sur Avenue Gustative</h2>
+        <style>
+            .Bienvenue{
+                margin-top: 50px;
+                text-align: center;
+                
+            }
+            h2{
+                color: grey;
+            }
+        </style>
+
+    </div>
+    <div class = "textPrésentation">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet nulla facilisi morbi tempus iaculis urna. At tempor commodo ullamcorper a lacus vestibulum. Posuere urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Nisl condimentum id venenatis a condimentum vitae sapien. Sed vulputate odio ut enim blandit volutpat maecenas volutpat. Nulla facilisi nullam vehicula ipsum a arcu cursus. Scelerisque viverra mauris in aliquam sem fringilla ut morbi. Ac turpis egestas integer eget aliquet nibh praesent tristique magna. Gravida cum sociis natoque penatibus. Elit pellentesque habitant morbi tristique senectus et. Aliquet nec ullamcorper sit amet risus nullam eget felis. At consectetur lorem donec massa sapien. Euismod quis viverra nibh cras.</p>
+        <style>
+            .textPrésentation{
+
+            }
+        </style>
+    </div>
+    {% for post in posts %}
+        
+    <div class="">
+        <div class="FlexBox">
+            <img class ="imageDePlat" src= {{ post.image}} alt="imag"  >
+            <p>{{post.creator}} • Le {{post.date}} • {{post.type}} </p>
+            <h4>{{post.name}}</h4>
+            <p class ="recetteText">{{post.recette}}</p>
+            <button class = "btnbtn" type ="button" >Voir plus</button>
+            <div class = "ligneDeMerde">
+                <p> </p>
+                <style>
+                    .ligneDeMerde{
+                        margin-top: 10px;
+                        margin-right:2%;
+                        margin-left:2%;
+                        width:96%;
+                        height:1px;
+                        background-color:#E9E1E9;
+
+                    }
+                </style>
+
+            </div>
+            <button class = "btnMessage" type ="button"> Commentaire</button>
+
+            <style>
+                .FlexBox{
+                    display:flex;
+                    flex-direction:column;
+                    border: 0.5px solid grey;
+                    width:70%;
+                }
+                .imageDePlat{
+                    display:block;
+                    width:100%;
+                    height:400px;
+                }
+                .recetteText{
+                    margin-top : -15px;
+                }
+                .btnbtn{
+                    background-color:#84947b;
+                    color: white;
+                    height:40px;
+                    margin-left:2%;
+                    margin-right:2%;
+                    border: 0px solid transparent;
+                }
+                .btnMessage{
+                    background: transparent;
+                    border: none !important;
+                    color:black;
+                    text-align: left;
+                    margin-bottom:30px;
+                    
+                }
+                .btnMessage::before{
+                    content: "\e98a"
+
+                }
+            </style>
+
+        </div>
+    </div>
+
+
+    {% endfor %}
+<footer class = "end">
+        <style>
+            .end{
+                margin-top: 2%;
+                background-color: #F8F9F7;
+                margin-right:2%;
+                margin-left: 2%;
+                display:flex;
+                justify-content: space-around;
+            }
+            .Social{
+                margin-top: 2%;
+
+            }
+        </style>
+
+        <div class="2022">
+            <h4>@ 2022 par Avenue Gustative</h4>
+        </div>
+        <div class="Social">
+            <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-pinterest"></a>
+
+        </div> 
+
+
+    </footer>
+
+
+
+
+</div>
+
+{% endblock %}

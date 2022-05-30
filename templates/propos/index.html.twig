@@ -1,0 +1,134 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProposController!{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class = "topBarre">
+    <button class = "btnbtn-default" type ="button"onclick ="window.location.href='http://127.0.0.1:8000/index'">ACCEUIL</button>
+    <button class = "btnbtn-default" type ="button" onclick ="window.location.href='http://127.0.0.1:8000/recettes'">RECETTES</button>
+    <button class = "btnbtn-default" type ="button" onclick ="window.location.href='http://127.0.0.1:8000/propos'">A PROPOS</button>
+    <button class = "btnbtn-default" type ="button" onclick ="window.location.href='http://127.0.0.1:8000/contact'">CONTACT</button>
+    <button class = "btnbtn-default" type ="button" onclick ="window.location.href='http://127.0.0.1:8000/login'">CONNEXION</button>
+
+
+    <style>
+        .topBarre{
+            background-color: #F8F9F7;
+            height:50px;
+            display:flex;
+            justify-content: space-around;
+
+
+
+        }
+        .btnbtn-default{
+            background: transparent;
+            border: none !important;
+            color:grey;
+            
+
+        }
+
+    </style>
+</div>
+
+<div class = "logoBarre">
+    <style>
+        .logoBarre{
+           text-align: center;
+           margin-top: 30px;
+        }
+        h1{
+            color: grey;
+        }
+    </style>
+
+    <img src= "https://www.le-monde-du-stickers.fr/11524/sticker-cuisine-olive.jpg" alt="Logo" width="10%" >
+    <h1>Aventure Gustative</h1>
+
+
+</div>
+<div class = "ligneDeMerde">
+    <p> </p>
+    <style>
+        .ligneDeMerde{
+            margin-top:50px;
+            margin-right:2%;
+            margin-left:2%;
+            width:96%;
+            height:1px;
+            background-color:#E9E1E9;
+
+        }
+    </style>
+
+</div>
+
+<div class = "mid">
+        <style>
+            .mid{
+                display: flex;
+                justify-content: center;
+                margin-right: 20%;
+                margin-left:20%;
+                margin-top:30px;
+            }
+            .imageDePlat{
+                display:block;
+                width:900px;
+                height:250px;
+            }
+            .cLeTexteLa{
+                margin-left:5%;
+            }
+        
+        </style>
+   
+    <img class ="imageDePlat" src="https://images.pexels.com/photos/1109197/pexels-photo-1109197.jpeg"  alt="imag" >
+    
+    <div class = "cLeTexteLa">
+        <i><p> <strong>Bonjours</strong> <br>
+        _____ <br><br>
+        Lorem ipsum dolor sit amet, consectetur adip Lorem ipsum dolor sit amet, consectetur adip Lorem ipsum dolor sit amet, consectetur adip Lorem ipsum dolor sit amet, consectetur adip Lorem ipsum dolor sit amet, consectetur adipnsectetur adip Lonsectetur adip Lo
+        
+        </p></i>
+    </div>
+
+  
+
+</div>
+
+ <footer class = "end">
+        <style>
+            .end{
+                margin-top: 2%;
+                background-color: #F8F9F7;
+                margin-right:2%;
+                margin-left: 2%;
+                display:flex;
+                justify-content: space-around;
+            }
+            .Social{
+                margin-top: 2%;
+
+            }
+        </style>
+
+        <div class="2022">
+            <h4>@ 2022 par Avenue Gustative</h4>
+        </div>
+        <div class="Social">
+            <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-pinterest"></a>
+
+        </div> 
+
+
+    </footer>
+
+
+{% endblock %}
